@@ -16,7 +16,7 @@ import { Input } from "@heroui/input";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
-import { RefObject, useRef } from "react";
+import {useRef,} from "react";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -33,7 +33,11 @@ import {Avatar} from "@heroui/avatar";
 
 import useStore from "@/stores/stores";
 
-import { ProfilePicSubPart } from "./profilePic/profilePicSubPart";
+import { ProfilePicSubPart } from "@/components/profilePic/";
+
+import { useTheme } from "next-themes";
+
+import localStorageAdapter from "@/services/localStorageAdapter/localStorageAdapter";
 
 export const Navbar = () => {
 
@@ -42,6 +46,8 @@ export const Navbar = () => {
   const setshowSubDivWhenProfileClicked:any = useStore(store=>store.setshowSubDivWhenProfileClicked);
 
   const buttonRefernce = useRef<HTMLDivElement>(null);
+
+  const {theme,setTheme} = useTheme();
 
   const searchInput = (
     <Input

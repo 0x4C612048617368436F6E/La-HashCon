@@ -7,6 +7,8 @@ import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 
+import DataSourceSlider from "@/components/carousel/carousel";
+
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
@@ -30,7 +32,7 @@ export default function Home() {
             radius: "full",
             variant: "shadow",
           })}
-          href={siteConfig.links.docs}
+          href="/news"
         >
           Start Exploring
         </Link>
@@ -42,6 +44,39 @@ export default function Home() {
           Login
         </Link>
       </div>
+          <div className="h-30 w-1">
+
+          </div>
+      <section className="mt-20">
+          <h1 className="font-bold text-2xl">Stay Updated with the latest tech news</h1>
+      </section>
+          <p className="text-lg">Discover the latest in technology — fresh updates from trusted sources like BBC, TechCrunch, and beyond. Stay informed with La HashCon!</p>
+
+
+      <section className="mt-20">
+        <h1 className="font-bold text-2xl">Featured Articles</h1>
+      </section>
+
+      <section className="mt-20">
+        <h1 className="font-bold text-2xl">Latest News</h1>
+      </section>
+
+      <section className="mt-20">
+        <h1 className="font-bold text-2xl">Popular Sources</h1>
+      </section>
+      <DataSourceSlider />
+
+      <section className="mt-20">
+        <h1 className="font-bold text-2xl">Newsletter/Join the Community</h1>
+      </section>
+
+      <section className="mt-20">
+        <h1 className="font-bold text-2xl">About La HashCon</h1>
+      </section>
+
+      <section className="mt-20">
+        <h1 className="font-bold text-2xl">Upcoming Events</h1>
+      </section>
     </section>
   );
 }

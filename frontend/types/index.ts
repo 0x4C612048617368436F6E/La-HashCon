@@ -8,3 +8,10 @@ export interface profilePicClickOutside{
   state:boolean;
   buttonRefernce:React.RefObject<HTMLDivElement>;
 }
+
+export interface DATASOURCES{
+  id:number
+  name:string
+  URL:string
+  image:string
+}

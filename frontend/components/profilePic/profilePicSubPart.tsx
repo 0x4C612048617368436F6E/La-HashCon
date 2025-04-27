@@ -6,7 +6,6 @@ import {NavbarMenuItem} from "@heroui/navbar";
 import { useTheme } from "next-themes";
 import { profilePicClickOutside } from "@/types";
 import useStore from "@/stores/stores";
-import { profile } from "console";
 
 //the state parameter is to check if the profile pic is open
 const ProfilePicSubPart = ({state,buttonRefernce}:profilePicClickOutside)=>{

@@ -1,11 +1,14 @@
 "use client";
 
 import { FC } from "react";
+import { useEffect } from "react";
 import { VisuallyHidden } from "@react-aria/visually-hidden";
 import { SwitchProps, useSwitch } from "@heroui/switch";
 import { useTheme } from "next-themes";
 import { useIsSSR } from "@react-aria/ssr";
 import clsx from "clsx";
+
+import localStorageAdapter from "@/services/localStorageAdapter/localStorageAdapter";
 
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
 
@@ -19,7 +22,21 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   classNames,
 }) => {
   const { theme, setTheme } = useTheme();
+
   const isSSR = useIsSSR();
+
+  useEffect(()=>{
+    const run = async()=>{
+      let savedTheme = await localStorageAdapter.getItem("theme");
+      if(savedTheme){
+        setTheme(savedTheme)
+      }else{
+        await localStorageAdapter.setItem("theme",theme as unknown as string);
+      }
+    }
+
+    run();
+  },[])
 
   const onChange = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
