@@ -5,9 +5,9 @@ import { Link } from "@heroui/link";
 
 const DataSourceSlider = ()=>{
     return(
-        <div className="flex invisible lg:visible">
+        <div className="flex">
             {DataSources.map((item)=>
-            <Card key={item.id} className="p-4 m-5">
+            <Card key={item.id} className="p-4 m-5 hidden md:block">
             <Link isExternal key={item.id} href={item.URL}>
             <Image key={item.id} src={item.image} alt={item.name} width={64} height={64} className="hover:cursor-pointer"/>
             </Link>

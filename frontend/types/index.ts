@@ -15,3 +15,11 @@ export interface DATASOURCES{
   URL:string
   image:string
 }
+
+export interface error{
+  name?:string,
+  username?:string,
+  password?:string,
+  terms?:string,
+  [key:string]:any
+}
