@@ -41,44 +41,36 @@ const Footer = ()=>{
                         })}
                       </div>
                       <p className="text-[16px] font-medium text-[#646464]">
-                        Privacy Policy | © {new Date().getFullYear()} Gymate <br />{" "}
-                        Design by{" "}
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://www.radiustheme.com/"
-                        >
-                          RadiusTheme
-                        </a>
+                        Privacy Policy | © {new Date().getFullYear()} La HashCon <br />{" "}
                       </p>
                     </div>
         
                     {/* middle div */}
                     <div className="flex flex-col gap-8 relative">
-                      <p className="text-[22px] font-bold footer-main">Our Classes</p>
+                      <p className="text-[22px] font-bold footer-main">La HashCon</p>
         
                       <span className="top-[33px] absolute w-[7rem] h-[4px] bg-[#ff0366]"></span>
         
                       <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                        Fitness Classes
+                      La HashCon
                       </p>
                       <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                        Aerobics Classes
+                      La HashCon
                       </p>
                       <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                        Power Yoga
+                      La HashCon
                       </p>
                       <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                        Learn Machines
+                      La HashCon
                       </p>
                       <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                        Full-body Strength
+                      La HashCon
                       </p>
                     </div>
         
                     {/* right div */}
                     <div className="flex flex-col gap-8 relative">
-                      <p className="text-[22px] font-bold footer-main">Working Hours</p>
+                      <p className="text-[22px] font-bold footer-main">La HashCon</p>
         
                       <span className="top-[33px] absolute w-[7rem] h-[4px] bg-[#ff0366]"></span>
         

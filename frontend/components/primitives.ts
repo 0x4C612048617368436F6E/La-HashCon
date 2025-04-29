@@ -1,7 +1,8 @@
 import { tv } from "tailwind-variants";
-
+//Bebas-Neue
+//font-semibold
 export const title = tv({
-  base: "tracking-tight inline font-semibold",
+  base: "tracking-tight inline font-Bebas_Neue tracking-wide",
   variants: {
     color: {
       violet: "from-[#FF1CF7] to-[#b249f8]",
@@ -41,8 +42,8 @@ export const title = tv({
 });
 
 export const subtitle = tv({
-  base: "w-full md:w-1/2 my-2 text-lg lg:text-xl text-default-600 block max-w-full",
-  variants: {
+  base: "w-full md:w-1/2 my-2 text-lg lg:text-xl text-default-600 block max-w-full font-Bebas_Neue tracking-[.25em]",
+  variants: { 
     fullWidth: {
       true: "!w-full",
     },

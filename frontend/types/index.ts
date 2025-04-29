@@ -21,5 +21,13 @@ export interface error{
   username?:string,
   password?:string,
   terms?:string,
+  [key:string]:any | null
+}
+
+export interface featuredArticlesData{
+  id?:number
+  Title?:string
+  Track?:number
+  Description?:string
   [key:string]:any
 }

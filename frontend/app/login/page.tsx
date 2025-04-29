@@ -11,6 +11,7 @@ import { Button } from "@heroui/button";
 import { useState } from "react";
 import useStore from "@/stores/stores";
 import { ValidationError } from "@react-types/shared";
+import Link from "next/link";
 
 export default function LoginPage(){
     //unpack the states
@@ -24,109 +25,73 @@ export default function LoginPage(){
     const setError = useStore((store)=>store.setLoginError)
 
     const submit = useStore((store)=>store.loginSubmit);
-    const setSubmit = useStore((store)=>store.setLoginSubmut);
+    const setSubmit = useStore((store)=>store.setLoginSubmit);
     
-    const onSubmit = ()=>{
-        console.log("Submitted");
+    const onSubmit = (e:any)=>{
+        e.preventDefault();
+        console.log(username)
+        console.log(password.length);
     }
 
-    const getPasswordError = (val:string)=>{
-        console.log("Get password Error");
+    const CustomFieldError = (val:string)=>{
+        let splittedVal = val.split('');
+        if(splittedVal.some((val)=>val === ' ')) return "Can not have any spaces."
+        if(((val.trim()).length) == 0){
+            return "Please enter your password" 
+        }
         return null;
     }
+
     return(
     <div>
       <h1 className={title()}>Login</h1>
       <Form
-      className="w-full justify-center items-center space-y-4"
+      className="w-full justify-center items-center space-y-4 mt-10"
       validationErrors={error}
       onReset={() => setSubmit(null)}
-      onSubmit={onSubmit}
+      onSubmit={(e)=>onSubmit(e)}
     >
       <div className="flex flex-col gap-4 max-w-md">
-        <Input
-          isRequired
-          errorMessage={({validationDetails}) => {
-            if (validationDetails.valueMissing) {
-              return "Please enter your name";
-            }
 
-            return error.name;
-          }}
-          label="Name"
-          labelPlacement="outside"
-          name="name"
-          placeholder="Enter your name"
-        />
-
-        <Input
-          isRequired
-          errorMessage={({validationDetails}) => {
-            if (validationDetails.valueMissing) {
-              return "Please enter your email";
-            }
-            if (validationDetails.typeMismatch) {
-              return "Please enter a valid email address";
-            }
-          }}
-          label="Email"
-          labelPlacement="outside"
-          name="email"
-          placeholder="Enter your email"
-          type="email"
-        />
+            <Input
+                  isRequired
+                  label="Username"
+                  labelPlacement="outside"
+                  name="username"
+                  value={username}
+                onValueChange={setUsername}
+                validate={(value)=>{
+                    if(value.length < 3)return "Username must be at least 3 characters long";
+                    if((value.split('')).some(val => val === ' ')) return "Can not have spaces"
+                }}
+                  placeholder="Enter your username"
+                />
 
         <Input
           isRequired
-          errorMessage={getPasswordError(password)}
-          isInvalid={getPasswordError(password) !== null}
           label="Password"
           labelPlacement="outside"
           name="password"
           placeholder="Enter your password"
-          type="password"
+          type="text"
           value={password}
+          validate={(value)=>{
+            if(value.length < 3)return "password must be at least 3 characters long";
+            if((value.split('')).some(val => val === ' ')) return "Can not have spaces"
+            }}
           onValueChange={setPassword}
         />
 
-        <Select
-          isRequired
-          label="Country"
-          labelPlacement="outside"
-          name="country"
-          placeholder="Select country"
-        >
-          <SelectItem key="ar">Argentina</SelectItem>
-          <SelectItem key="us">United States</SelectItem>
-          <SelectItem key="ca">Canada</SelectItem>
-          <SelectItem key="uk">United Kingdom</SelectItem>
-          <SelectItem key="au">Australia</SelectItem>
-        </Select>
-
-        <Checkbox
-          isRequired
-          classNames={{
-            label: "text-small",
-          }}
-          isInvalid={!!error.terms}
-          name="terms"
-          validationBehavior="aria"
-          value="true"
-          onValueChange={() => setError((prev) => ({...prev, terms: undefined}))}
-        >
-          I agree to the terms and conditions
-        </Checkbox>
-
-        {error.terms && <span className="text-danger text-small">"What the FUCK"{error.terms}</span>}
-
         <div className="flex gap-4">
           <Button className="w-full" color="primary" type="submit">
-            Submit
+            Login
           </Button>
           <Button type="reset" variant="bordered">
             Reset
           </Button>
         </div>
+        <p>Do not have an account? <Link href="/register"> <span className="text-sky-500 hover:cursor-pointer">Register</span></Link>
+        </p>
       </div>
 
       {submit && (

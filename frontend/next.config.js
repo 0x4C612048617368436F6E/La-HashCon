@@ -26,7 +26,14 @@ const nextConfig = {
             protocol:"https",
             hostname:"cdn.arstechnica.net",
             pathname:"**"
+        },
+        //The below is for development
+        {
+            protocol:"https",
+            hostname:"heroui.com",
+            pathname:"**"
         }
+        //above is for development
     ]
 }
 };

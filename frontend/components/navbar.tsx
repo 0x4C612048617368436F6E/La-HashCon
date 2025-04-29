@@ -107,13 +107,13 @@ const profilePicClickedCheck = (e:any):void=>{
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
+          <Link isExternal aria-label="Twitter" href="#">
             <TwitterIcon className="text-default-500" />
           </Link>
-          <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
+          <Link isExternal aria-label="Discord" href="#">
             <DiscordIcon className="text-default-500" />
           </Link>
-          <Link isExternal aria-label="Github" href={siteConfig.links.github}>
+          <Link isExternal aria-label="Github" href="#">
             <GithubIcon className="text-default-500" />
           </Link>
           <ThemeSwitch />
@@ -122,7 +122,7 @@ const profilePicClickedCheck = (e:any):void=>{
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="Github" href={siteConfig.links.github}>
+        <Link isExternal aria-label="Github" href="#">
           <GithubIcon className="text-default-500" />
         </Link>
         <ThemeSwitch />
@@ -142,7 +142,7 @@ const profilePicClickedCheck = (e:any):void=>{
                       ? "danger"
                       : "foreground"
                 }
-                href="#"
+                href={item.href}
                 size="lg"
               >
                 {item.label}
