@@ -25,13 +25,13 @@ export default function Home() {
 
       <div className="inline-block max-w-xl text-center justify-center">
 
-        <span className={title()}>Your&nbsp;</span>
-        <span className={title()}>Daily&nbsp;</span>
+        <span className={title()} role="title1">Your&nbsp;</span>
+        <span className={title()} role="title2">Daily&nbsp;</span>
         <br />
-        <span className={title()}>
+        <span className={title()} role="title3">
           Dose Of Tech, Trends and Tomorrow All In One Place.
         </span>
-        <div className={subtitle({ class: "mt-4" })}>
+        <div className={subtitle({ class: "mt-4" })} role="title4">
           Stay In Sync With The World Of Tech.
         </div>
       </div>
@@ -64,9 +64,7 @@ export default function Home() {
       </section>
       <section>
 
-          <p className="text-lg text-justify font-Bebas_Neue tracking-wide">
-          <span className="font-bold sm:text-4xl text-lg text-sky-500 font-Bebas_Neue">
-        <Typewriter
+      <Typewriter
           options={{
             strings: ["Are you a Tech Enthusiast?"],
             autoStart: true,
@@ -75,6 +73,8 @@ export default function Home() {
             delay: 75,
           }}
         />
+          <p className="text-lg text-justify font-Bebas_Neue tracking-wide">
+          <span className="font-bold sm:text-4xl text-lg text-sky-500 font-Bebas_Neue">
 
           </span>
           Then discover the latest in technology — fresh updates from trusted and reliable sources like BBC, TechCrunch, and beyond. Stay informed with La HashCon!
