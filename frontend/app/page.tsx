@@ -64,6 +64,7 @@ export default function Home() {
       </section>
       <section>
 
+          <div className="font-bold sm:text-4xl text-lg text-sky-500 font-Bebas_Neue">
       <Typewriter
           options={{
             strings: ["Are you a Tech Enthusiast?"],
@@ -73,6 +74,7 @@ export default function Home() {
             delay: 75,
           }}
         />
+        </div>
           <p className="text-lg text-justify font-Bebas_Neue tracking-wide">
           <span className="font-bold sm:text-4xl text-lg text-sky-500 font-Bebas_Neue">
 

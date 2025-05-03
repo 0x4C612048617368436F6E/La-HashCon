@@ -60,7 +60,7 @@ const ProfilePicSubPart = ({state,buttonRefernce}:profilePicClickOutside)=>{
                     ? "danger"
                     : "foreground"
               }
-              href="#"
+              href={item.href}
             >
               {item.label}
             </Link>
